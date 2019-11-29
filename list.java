@@ -48,11 +48,11 @@ public class LinkedList {
 
   public static LinkedList addNodeNPos(LinkedList list, int data, int pos) {
     Node newNode = new Node(data);
-    int i = 1;
+    int i = 0;
 
     if (pos > LinkedListSize(list)) {
       System.out.print("Number is greater than list size.\n");
-    } else if (pos == 1) {
+    } else if (pos == 0) {
       newNode.next = list.head;
       list.head = newNode;
     } else {
@@ -69,11 +69,11 @@ public class LinkedList {
 
   public static LinkedList deleteNodeNPos(LinkedList list, int pos) {
     Node target = list.head;
-    int i = 1;
+    int i = 0;
 
     if (pos > LinkedListSize(list)) {
       System.out.print("Number is greater than list size.\n");
-    } else if (pos == 1) {
+    } else if (pos == 0) {
       list.head = target.next;
     } else {
       while (i < pos - 1) {
@@ -169,10 +169,10 @@ public class LinkedList {
       list = addNodeEnd(list, 2);
       list = addNodeEnd(list, 1);
       list.head = addNodeStart(list, 3);
-      list = addNodeNPos(list, 5, 1);
+      list = addNodeNPos(list, 5, 0);
       printList(list);
       newNode = getPositionElem(list, 4);
-      list = deleteNodeNPos(list, 1);
+      list = deleteNodeNPos(list, 0);
       list = addNodeEnd(list, 1);
       printList(list);
       list = deleteNodeElem(list, 1);
